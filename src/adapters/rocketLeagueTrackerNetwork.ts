@@ -45,10 +45,15 @@ export const foo = async (username: string) => {
 
   return new Promise((res) => {
     page.on("response", async (response) => {
-      console.log("XHR response received");
+      console.log("XHR response received", response);
 
       // browser.close();
-      res(response.json());
+      try {
+        res(response.json());
+      } catch (e) {
+        response.text().then(console.log);
+        throw e;
+      }
     });
 
     page

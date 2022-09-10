@@ -1,10 +1,7 @@
-import axios from "axios";
+import chromium from "@sparticuz/chrome-aws-lambda";
 import { Player } from "../model/player";
 import { Playlist, PlaylistId } from "../model/playlist";
 import ranks from "../fixtures/doublesRanks.json";
-import puppeteer from "puppeteer";
-
-import chromium from "@sparticuz/chrome-aws-lambda";
 
 const buildUrl = (id: string) =>
   `https://api.tracker.gg/api/v2/rocket-league/standard/profile/psn/${id}?c=${new Date().valueOf()}`;
@@ -39,6 +36,7 @@ export const foo = async (username: string) => {
     defaultViewport: chromium.defaultViewport,
     executablePath: await chromium.executablePath,
     headless: true,
+    ignoreHTTPSErrors: true,
   });
   const page = await browser.newPage();
   await page.setUserAgent(

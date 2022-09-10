@@ -52,10 +52,10 @@
     "@middy/validator": "^2.5.4",
     "@sentry/node": "^6.16.1",
     "@sentry/tracing": "^6.16.1",
+    "@sparticuz/chrome-aws-lambda": "^17.1.1",
     "axios": "^0.24.0",
-    "chrome-aws-lambda": "^10.1.0",
     "dayjs": "^1.10.7",
     "puppeteer": "^14.4.1",
-    "puppeteer-core": "^15.0.1"
+    "puppeteer-core": "^17.1.3"
   }
 }

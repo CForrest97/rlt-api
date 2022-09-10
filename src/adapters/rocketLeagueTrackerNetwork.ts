@@ -4,7 +4,7 @@ import { Playlist, PlaylistId } from "../model/playlist";
 import ranks from "../fixtures/doublesRanks.json";
 import puppeteer from "puppeteer";
 
-import chromium from "chrome-aws-lambda";
+import chromium from "@sparticuz/chrome-aws-lambda";
 
 const buildUrl = (id: string) =>
   `https://api.tracker.gg/api/v2/rocket-league/standard/profile/psn/${id}?c=${new Date().valueOf()}`;

@@ -1,3 +1,11 @@
 node_modules/
 .env
 coverage/
+.next
+.eslintcache
+.serverless
+.serverless_nextjs
+report.*.json
+.idea
+yarn-error.log
+.DS_Store

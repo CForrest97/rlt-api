@@ -11,7 +11,7 @@ provider:
         - dynamodb:Query
         - dynamodb:PutItem
       Resource:
-       - Fn::GetAtt: [ playerPlaylistRecord, Arn ]
+        - Fn::GetAtt: [playerPlaylistRecord, Arn]
 
 plugins:
   - serverless-plugin-typescript
@@ -21,6 +21,7 @@ plugins:
 functions:
   getPlayer:
     handler: src/controllers/http/index.getPlayer
+    layers: — arn:aws:lambda:eu-west-2:764866452798:layer:chrome-aws-lambda:31
     events:
       - http:
           method: get
@@ -30,8 +31,6 @@ functions:
             parameters:
               paths:
                 playerId: true
-    layers: # reference to the already existing layer with Chrome
-      — arn:aws:lambda:us-east-1:764866452798:layer:chrome-aws-lambda:31
 
   getPlayerPlaylistRecord:
     handler: src/controllers/http/index.getPlayerPlaylistRecord
